@@ -1,8 +1,23 @@
 <template>
-  <div>
-    <Nuxt />
+  <div style="background-color:#F7F7F7;">
+    <appbar />
+    <Nuxt style="background-color:white;"/>
+    <navbar />
   </div>
 </template>
+
+<script>
+import Appbar from '~/layouts/appbar.vue'
+import Navbar from '~/layouts/navbar.vue'
+
+export default {
+  components: {
+    Appbar,
+    Navbar
+  }
+}
+</script>
+
 
 <style>
 html {
