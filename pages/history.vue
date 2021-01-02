@@ -1,5 +1,5 @@
 <template>
-  <div class="container" style="max-width:600px">
+  <div class="container" style="max-width:500px;">
     History
   </div>
 </template>

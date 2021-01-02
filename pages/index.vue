@@ -1,6 +1,122 @@
 <template>
-  <div class="container" style="max-width:600px">
-    Home
+  <div class="coba" style="max-width:500px;">
+    <div class="px-3" style="background-color:white;height:100%;">
+      <b-row id="slidder" class="pb-2 mt-4 pt-4 bg-grey-light">
+        <b-col class="nopadding" style="margin-top:30px;">
+          <b-carousel
+            id="carousel-1"
+            v-model="slide"
+            :interval="4000"
+            controls
+            indicators
+            background="#ababab"
+            style="text-shadow: 1px 1px 2px #333;border-radius:20px;"
+            @sliding-start="onSlideStart"
+            @sliding-end="onSlideEnd"
+          >
+            <b-carousel-slide img-src="https://lelogama.go-jek.com/post_featured_image/promo_ongkir_gofood_banner.jpg" />
+            <b-carousel-slide img-src="https://lelogama.go-jek.com/post_featured_image/promo_ongkir_gofood_banner.jpg" />
+            <b-carousel-slide img-src="https://lelogama.go-jek.com/post_featured_image/promo_ongkir_gofood_banner.jpg" />
+          </b-carousel>
+        </b-col>
+      </b-row>
+      <b-form style="padding:15px;box-shadow: rgba(152, 152, 152, 0.2) 0px 2px 8px 1px;border-radius:10px;margin-top:5px;">
+        <div style="font-size:18px;font-weight:bold;">
+          Cari Tiket Anda
+        </div>
+        <div style="font-size:13px;color:grey;margin-bottom:10px;">
+          Atur Jadwal Keberangkatan Anda
+        </div>
+        <div style="font-size:14px;font-weight:500;margin-bottom:7px;">
+          Keberangkatan
+        </div>
+        <b-input-group size="" class="mb-2">
+          <b-input-group-prepend is-text>
+            <svg
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 16 16"
+              class="bi bi-receipt-cutoff"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+            </svg>
+          </b-input-group-prepend>
+          <b-form-select :options="options" placeholder="Search terms" class="custom-select-form"></b-form-select>
+        </b-input-group>
+        <div style="font-size:14px;font-weight:500;margin-bottom:7px;">
+          Tujuan
+        </div>
+        <b-input-group size="" class="mb-2">
+          <b-input-group-prepend is-text>
+            <svg
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 16 16"
+              class="bi bi-receipt-cutoff"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+            </svg>
+          </b-input-group-prepend>
+          <b-form-select :options="options" placeholder="Search terms" class="custom-select-form"></b-form-select>
+        </b-input-group>
+        <div style="font-size:14px;font-weight:500;margin-bottom:7px;">
+          Layanan
+        </div>
+        <b-input-group size="" class="mb-2">
+          <b-input-group-prepend is-text>
+            <svg
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 16 16"
+              class="bi bi-receipt-cutoff"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+            </svg>
+          </b-input-group-prepend>
+          <b-form-select :options="options" placeholder="Search terms" class="custom-select-form"></b-form-select>
+        </b-input-group><div style="font-size:14px;font-weight:500;margin-bottom:7px;">
+          Tanggal Keberangkatan
+        </div>
+        <b-row fluid no-gutters>
+          <b-col cols="7">
+            <b-form-datepicker
+              id="example-datepicker"
+              placeholder="Tanggal"
+              :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }"
+ class="mb-2"></b-form-datepicker>
+          </b-col>
+          <b-col cols="5" style="padding-left:10px;">
+            <b-form-timepicker locale="en" placeholder="Waktu"></b-form-timepicker>
+          </b-col>
+        </b-row>
+        <div style="font-size:14px;font-weight:500;margin-bottom:7px;">
+          Penumpang
+        </div>
+        <b-input-group size="" class="mb-2">
+          <b-input-group-prepend is-text>
+            <svg
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 16 16"
+              class="bi bi-receipt-cutoff"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+            </svg>
+          </b-input-group-prepend>
+          <b-form-select :options="options" placeholder="Search terms" class="custom-select-form"></b-form-select>
+        </b-input-group>
+        <vs-button
+          block
+          style="margin-top:20px;"
+        >
+          Order Now
+        </vs-button>
+      </b-form>
+    </div>
   </div>
 </template>
 
@@ -8,18 +124,50 @@
   export default {
     data:() => ({
       active: 'home',
-    })
+      slide: 0,
+      options: [
+          { value: null, text: 'Lokasi A' },
+          { value: 'a', text: 'Lokasi B' },
+          { value: 'b', text: 'Lokasi C', disabled: true },
+          { value: 'c', text: 'Lokasi D', disabled: true },
+          { value: 'd', text: 'Lokasi E', disabled: false },
+          { value: 'e', text: 'Lokasi F', disabled: false },
+        ]
+    }),
+    methods: {
+      onSlideStart (slide) {
+        this.sliding = true
+      },
+      onSlideEnd (slide) {
+        this.sliding = false
+      }
+    }
   }
 </script>
 
 <style>
-.container {
+.custom-select-form {
+  border-right:1px solid #ced4da;
+  border-left:0px solid #ced4da;
+  border-top:1px solid #ced4da;
+  border-bottom:1px solid #ced4da;
+}
+.input-group-text {
+  background-color:white;
+  border-left:1px solid #ced4da;
+  border-top:1px solid #ced4da;
+  border-bottom:1px solid #ced4da;
+}
+#slidder .carousel-inner, #slidder .carousel {
+  border-radius:10px;
+}
+.coba {
   margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
+  min-height: 800px;;
+  /* display: flex; */
+  /* justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center; */
 }
 
 .title {

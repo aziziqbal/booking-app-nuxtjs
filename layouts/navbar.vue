@@ -128,7 +128,7 @@
 </script>
 <style>
 .navbar {
-  max-width: 600px;
+  max-width: 500px;
   box-shadow: rgba(3, 18, 26, 0.15) 0px 0px 10px;
   padding-top:0px;
   padding-bottom:0px;
