@@ -1,7 +1,7 @@
 <template>
   <div style="background-color:#F7F7F7;">
     <appbar />
-    <Nuxt style="background-color:white;"/>
+    <Nuxt style="background-color:white; box-shadow: rgba(3, 18, 26, 0.15) 0px 0px 10px;"/>
     <navbar />
   </div>
 </template>
