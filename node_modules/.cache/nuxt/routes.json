@@ -1,0 +1,30 @@
+[
+  {
+    "name": "history",
+    "path": "/history",
+    "component": "/Users/macbookpro/Documents/Project/booking-app-nuxtjs/pages/history.vue",
+    "chunkName": "pages/history",
+    "_name": "_e34601f6"
+  },
+  {
+    "name": "profile",
+    "path": "/profile",
+    "component": "/Users/macbookpro/Documents/Project/booking-app-nuxtjs/pages/profile.vue",
+    "chunkName": "pages/profile",
+    "_name": "_f80ddccc"
+  },
+  {
+    "name": "ticket",
+    "path": "/ticket",
+    "component": "/Users/macbookpro/Documents/Project/booking-app-nuxtjs/pages/ticket.vue",
+    "chunkName": "pages/ticket",
+    "_name": "_de2c72aa"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/macbookpro/Documents/Project/booking-app-nuxtjs/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_2b4c9683"
+  }
+]

@@ -14,9 +14,9 @@
             @sliding-start="onSlideStart"
             @sliding-end="onSlideEnd"
           >
-            <b-carousel-slide img-src="https://lelogama.go-jek.com/post_featured_image/promo_ongkir_gofood_banner.jpg" />
-            <b-carousel-slide img-src="https://lelogama.go-jek.com/post_featured_image/promo_ongkir_gofood_banner.jpg" />
-            <b-carousel-slide img-src="https://lelogama.go-jek.com/post_featured_image/promo_ongkir_gofood_banner.jpg" />
+            <b-carousel-slide img-src="/1.jpeg" />
+            <b-carousel-slide img-src="/2.jpeg" />
+            <b-carousel-slide img-src="/3.jpeg" />
           </b-carousel>
         </b-col>
       </b-row>
@@ -42,7 +42,7 @@
               <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
             </svg>
           </b-input-group-prepend>
-          <b-form-select :options="options" placeholder="Search terms" class="custom-select-form"></b-form-select>
+          <b-form-select :options="options" placeholder="Search terms" class="font-form custom-select-form"></b-form-select>
         </b-input-group>
         <div style="font-size:14px;font-weight:500;margin-bottom:7px;">
           Tujuan
@@ -59,7 +59,7 @@
               <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
             </svg>
           </b-input-group-prepend>
-          <b-form-select :options="options" placeholder="Search terms" class="custom-select-form"></b-form-select>
+          <b-form-select :options="options" placeholder="Search terms" class="font-form custom-select-form"></b-form-select>
         </b-input-group>
         <div style="font-size:14px;font-weight:500;margin-bottom:7px;">
           Layanan
@@ -76,7 +76,7 @@
               <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
             </svg>
           </b-input-group-prepend>
-          <b-form-select :options="options" placeholder="Search terms" class="custom-select-form"></b-form-select>
+          <b-form-select :options="options" placeholder="Search terms" class="font-form custom-select-form"></b-form-select>
         </b-input-group><div style="font-size:14px;font-weight:500;margin-bottom:7px;">
           Tanggal Keberangkatan
         </div>
@@ -84,12 +84,18 @@
           <b-col cols="7">
             <b-form-datepicker
               id="example-datepicker"
+              locale="id"
               placeholder="Tanggal"
-              :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }"
- class="mb-2"></b-form-datepicker>
+              :date-format-options="{  month: 'short', year: 'numeric', day: '2-digit', weekday: 'short' }"
+              class="font-form mb-2"></b-form-datepicker>
           </b-col>
           <b-col cols="5" style="padding-left:10px;">
-            <b-form-timepicker locale="en" placeholder="Waktu"></b-form-timepicker>
+            <b-form-timepicker
+              now-button
+              locale="id"
+              placeholder="Waktu"
+              class="font-form">
+            </b-form-timepicker>
           </b-col>
         </b-row>
         <div style="font-size:14px;font-weight:500;margin-bottom:7px;">
@@ -107,7 +113,7 @@
               <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
             </svg>
           </b-input-group-prepend>
-          <b-form-select :options="options" placeholder="Search terms" class="custom-select-form"></b-form-select>
+          <b-form-select :options="options" placeholder="Search terms" class="font-form custom-select-form"></b-form-select>
         </b-input-group>
         <vs-button
           block
@@ -134,18 +140,41 @@
           { value: 'e', text: 'Lokasi F', disabled: false },
         ]
     }),
+    mounted () {
+      this.getData()
+    },
     methods: {
       onSlideStart (slide) {
         this.sliding = true
       },
       onSlideEnd (slide) {
         this.sliding = false
-      }
+      },
+      async getData() {
+        const data = await this.$axios
+          .$get(
+            'https://api.aziziqbal.com/laravel-crud/public/api/siswa'
+          )
+          .then((res) => {
+            console.log(res)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      },
     }
   }
 </script>
 
 <style>
+@media screen and (max-width: 400px) {
+  .bi {
+    font-size:14px;
+  }
+  .font-form {
+    font-size:14px;
+  }
+}
 .custom-select-form {
   border-right:1px solid #ced4da;
   border-left:0px solid #ced4da;
@@ -163,7 +192,7 @@
 }
 .coba {
   margin: 0 auto;
-  min-height: 800px;;
+  min-height: 100vh;;
   /* display: flex; */
   /* justify-content: center;
   align-items: center;
