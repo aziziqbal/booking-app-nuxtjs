@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height:100%;">
     <nav class="navbar navbar-light bg-light navbar-expand fixed-bottom mx-auto">
       <ul class="navbar-nav nav-justified w-100">
         <li class="nav-item">

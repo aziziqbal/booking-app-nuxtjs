@@ -11,6 +11,9 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "@capacitor/android": "^2.4.5",
+    "@capacitor/cli": "^2.4.5",
+    "@capacitor/core": "^2.4.5",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
     "bootstrap-vue": "^2.21.2",

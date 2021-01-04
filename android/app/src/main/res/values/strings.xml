@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">lallo</string>
+    <string name="title_activity_main">lallo</string>
+    <string name="package_name">com.lallo</string>
+    <string name="custom_url_scheme">com.lallo</string>
+</resources>

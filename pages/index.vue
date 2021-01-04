@@ -20,7 +20,7 @@
           </b-carousel>
         </b-col>
       </b-row>
-      <b-form style="padding:15px;box-shadow: rgba(152, 152, 152, 0.2) 0px 2px 8px 1px;border-radius:10px;margin-top:5px;">
+      <b-form style="padding:15px;box-shadow: rgba(152, 152, 152, 0.2) 0px 2px 8px 1px;border-radius:10px;margin-top:5px;height:520px;">
         <div style="font-size:18px;font-weight:bold;">
           Cari Tiket Anda
         </div>
@@ -192,7 +192,9 @@
 }
 .coba {
   margin: 0 auto;
-  min-height: 100vh;;
+  /* overflow-y: scroll; */
+  /* min-height: 100%; */
+  height: 100%;
   /* display: flex; */
   /* justify-content: center;
   align-items: center;
