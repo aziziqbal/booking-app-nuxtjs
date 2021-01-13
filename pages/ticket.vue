@@ -1,15 +1,15 @@
 <template>
   <div class="container" style="max-width:500px;">
-    Ticket
+    Tiket
   </div>
 </template>
 
 <script>
-  export default {
-    data:() => ({
-      active: 'home',
-    })
-  }
+export default {
+  data: () => ({
+    active: 'home'
+  })
+}
 </script>
 
 <style>

@@ -5,11 +5,11 @@
 </template>
 
 <script>
-  export default {
-    data:() => ({
-      active: 'home',
-    })
-  }
+export default {
+  data: () => ({
+    active: 'home'
+  })
+}
 </script>
 
 <style>
