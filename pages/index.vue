@@ -2,7 +2,7 @@
   <div class="coba" style="max-width:500px;">
     <div class="px-3" style="background-color:white;height:100%;">
       <b-row id="slidder" class="pb-2 mt-4 pt-4 bg-grey-light">
-        <b-col class="nopadding" style="margin-top:30px;">
+        <b-col class="nopadding">
           <b-carousel
             id="carousel-1"
             v-model="slide"

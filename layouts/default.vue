@@ -1,7 +1,7 @@
 <template>
   <div style="background-color:#F7F7F7;overflow-y:hidden;">
     <appbar />
-    <Nuxt style="background-color:white; box-shadow: rgba(3, 18, 26, 0.15) 0px 0px 10px;min-height: 110vh;;" />
+    <Nuxt class="nuxt-container" />
     <navbar />
   </div>
 </template>
@@ -20,7 +20,14 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.nuxt-container {
+  background-color:white;
+  box-shadow: rgba(3, 18, 26, 0.15) 0px 0px 10px;
+  min-height: 110vh;
+  margin-top:75px;
+  z-index:7;
+}
 .not-margin {
     margin: 0px;
     font-weight: normal;
