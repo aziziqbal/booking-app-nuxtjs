@@ -78,16 +78,25 @@
                   </p>
                 </div>
               </div>
-              <div class="footer-order justify-content-start d-flex" style="border-top:1px solid #f5f5f5;margin-top:5px;">
-                  <vs-button
-                    size="small"
-                    success
-                    style="width:100px;margin-top:10px;"
-                    border
-                    @click="dialog=true"
-                  >
-                    Detail
-                  </vs-button>
+              <div class="footer-order" style="border-top:1px solid #f5f5f5;margin-top:5px;">
+                <vs-row justify="space-between">
+                  <vs-col w="8">
+                    <div style="color:;font-size:0.8rem;padding-top:15px;padding-left:10px;">
+                      Batas Pembayaran 21 Feb 2021 14.00
+                    </div>
+                  </vs-col>
+                  <vs-col w="4" align="right">
+                    <vs-button
+                      size="small"
+                      success
+                      style="width:100px;margin-top:10px;"
+                      border
+                      @click="dialog=true"
+                    >
+                      Detail
+                    </vs-button>
+                  </vs-col>
+                </vs-row>
                 </div>
             </div>
           </div>
@@ -105,10 +114,15 @@
       </template>
       <div class="con-content" >
         <vs-alert shadow style="margin-bottom:20px;">
-          <template #title>
+          <template style="color:grey;">
             Nomor Virtual Account
           </template>
-          W04354893419882
+          <div style="font-size:1.4rem;margin-top:10px;">
+            W04354893419882 <br>
+            <div style="color:grey;font-size:0.7rem;">
+              Batas Pembayaran 21 Feb 2021 14.00
+            </div>
+          </div>
         </vs-alert>
         <vs-row justify="space-between">
           <vs-col w="7">
@@ -154,7 +168,16 @@
           <div style="color:blue;font-size:0.9rem;">
             Domestik
           </div>
-        </div><div style="margin-bottom:10px;">
+        </div>
+        <div style="margin-bottom:10px;">
+          <div style="color:grey;font-weight:bold;font-size:0.8rem;">
+            Metode Pembayaran
+          </div>
+          <div style="color:blue;font-size:0.9rem;">
+            Mandiri Virtual Account
+          </div>
+        </div>
+        <div style="margin-bottom:10px;">
           <div style="color:grey;font-weight:bold;font-size:0.9rem;margin-bottom:5px;">
             Tarif Tiket
           </div>

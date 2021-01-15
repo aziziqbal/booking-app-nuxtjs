@@ -19,7 +19,7 @@
               Riwayat
             </p>
             <p class="vs-text-primary font-weight-bold">
-              Perjalanan
+              Pesanan
             </p>
           </div>
           <div>
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="list" style="padding-bottom:10px;height:100%;">
-          <div v-for="list1 in 3" :key="list1" class="product-list p-2" style="box-shadow: rgba(152, 152, 152, 0.2) 0px 2px 8px 1px;border-radius:10px;margin-bottom:10px;">
+          <div v-for="list1 in 2" :key="list1" class="product-list p-2" style="box-shadow: rgba(152, 152, 152, 0.2) 0px 2px 8px 1px;border-radius:10px;margin-bottom:10px;">
             <div class="transaction">
               <div class="header px-2 text-center" style="border-bottom:1px solid #f5f5f5;">
                 <div style="color: grey; font-size:15px;margin-bottom:5px;">Kamis, 30 September 2020</div>
@@ -53,10 +53,9 @@
                   </p>
                   <vs-button
                     size="small"
-                    success
                     gradient
                   >
-                    Sedang Diproses
+                    Selesai
                   </vs-button>
                 </div>
                 <div class="total p-1 text-center">
@@ -78,16 +77,25 @@
                   </p>
                 </div>
               </div>
-
-              <div class="footer-order justify-content-end d-flex">
-                  <vs-button
-                    size="small"
-                    success
-                    border
-                    @click="dialog=true"
-                  >
-                    Detail
-                  </vs-button>
+              <div class="footer-order" style="border-top:1px solid #f5f5f5;margin-top:5px;">
+                <vs-row justify="space-between">
+                  <vs-col w="8">
+                    <div style="color:;font-size:0.8rem;padding-top:15px;padding-left:10px;">
+                      Batas Pembayaran 21 Feb 2021 14.00
+                    </div>
+                  </vs-col>
+                  <vs-col w="4" align="right">
+                    <vs-button
+                      size="small"
+                      success
+                      style="width:100px;margin-top:10px;"
+                      border
+                      @click="dialog=true"
+                    >
+                      Detail
+                    </vs-button>
+                  </vs-col>
+                </vs-row>
                 </div>
             </div>
           </div>
@@ -97,7 +105,7 @@
     <div class="center">
       <vs-pagination v-model="page" :length="5" />
     </div>
-    <vs-dialog v-model="dialog">
+    <vs-dialog v-model="dialog" overflow-hidden>
       <template #header>
         <h4 class="not-margin">
           Detail <b>Tiket</b>
@@ -105,10 +113,15 @@
       </template>
       <div class="con-content" >
         <vs-alert shadow style="margin-bottom:20px;">
-          <template #title>
+          <template style="color:grey;">
             Nomor Virtual Account
           </template>
-          W04354893419882
+          <div style="font-size:1.4rem;margin-top:10px;">
+            W04354893419882 <br>
+            <div style="color:grey;font-size:0.7rem;">
+              Batas Pembayaran 21 Feb 2021 14.00
+            </div>
+          </div>
         </vs-alert>
         <vs-row justify="space-between">
           <vs-col w="7">
@@ -154,7 +167,16 @@
           <div style="color:blue;font-size:0.9rem;">
             Domestik
           </div>
-        </div><div style="margin-bottom:10px;">
+        </div>
+        <div style="margin-bottom:10px;">
+          <div style="color:grey;font-weight:bold;font-size:0.8rem;">
+            Metode Pembayaran
+          </div>
+          <div style="color:blue;font-size:0.9rem;">
+            Mandiri Virtual Account
+          </div>
+        </div>
+        <div style="margin-bottom:10px;">
           <div style="color:grey;font-weight:bold;font-size:0.9rem;margin-bottom:5px;">
             Tarif Tiket
           </div>

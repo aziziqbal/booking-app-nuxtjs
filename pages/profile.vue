@@ -1,91 +1,69 @@
 <template>
-  <div class="container" style="max-width:500px;">
-    Profile
+  <div class="contain">
+    <b-card no-body class="overflow-hidden" style="max-width: 540px;border: 0px solid; box-shadow: rgba(152, 152, 152, 0.2) 0px 2px 8px 1px;border-radius:10px;padding:10px;">
+      <b-row no-gutters>
+        <b-col md="4">
+          <vs-card>
+            <template #img>
+              <img src="https://i.imgflip.com/3b0s3p.jpg" alt="" style="width:300px;">
+            </template>
+          </vs-card>
+        </b-col>
+        <b-col md="8">
+          <b-card-body>
+            <div style="color:grey;font-size:1.5rem;margin-left:5px;">
+              Muh Aziz Iqbal
+            </div>
+            <div style="color:grey;font-size:0.8rem;margin-left:5px;">
+              info@aziziqbal.com
+            </div>
+            <!-- <vs-button
+              size="small"
+              upload
+              color="blue"
+              style="margin-top:10px;width:100px;border:solid 1px grey;"
+              border
+              @click="dialog=true"
+              >
+              Ubah Profil
+            </vs-button> -->
+            <vs-button
+              size="small"
+              style="margin-top:10px;width:100px;"
+
+              @click="dialog=true"
+              >
+              Ubah Profil
+            </vs-button>
+          </b-card-body>
+        </b-col>
+      </b-row>
+    </b-card>
+    <div style="box-shadow: rgba(152, 152, 152, 0.2) 0px 2px 8px 1px;border-radius:10px;padding:10px;margin-top:20px;">
+      <b-nav tabs>
+        <b-nav-item>Biodata Diri</b-nav-item>
+        <b-nav-item>Daftar Penumpang</b-nav-item>
+      </b-nav>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   data: () => ({
-    active: 'home'
+    active: 'home',
+    dialog: false,
+    page:1,
   })
 }
 </script>
 
 <style>
-.container {
+.contain {
+  max-width:500px;
+  background-color:blue;
   margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 55px;
-  color: #35495e;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: 25px 0;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 1.1rem;
-  color: #526488;
-  word-spacing: 2px;
-  padding-bottom: 15px;
-  max-width: 600px;
-}
-
-.subtitle a {
-  font-weight: 500;
-  color: inherit;
-}
-
-.links {
-  padding-top: 15px;
-  margin-bottom: 20px;
-}
-
-.content-logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 500px;
-}
-
-.plus {
-  font-size: 2.5rem;
-  margin: 15px;
-  color: #35495e;
-}
-
-.h3 {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-weight: 400;
-  margin: 10px;
+  height: 100%;
+  padding:15px;
 }
 </style>
