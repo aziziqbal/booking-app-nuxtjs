@@ -254,9 +254,10 @@ export default {
 <style>
 .contain {
   max-width:500px;
-  background-color:blue;
+  background-color:white;
   margin: 0 auto;
   height: 100%;
   padding:15px;
+  margin-top:65px;
 }
 </style>

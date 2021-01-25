@@ -1,5 +1,5 @@
 <template>
-  <div class="coba" style="max-width:500px;">
+  <div class="coba" style="max-width:500px;margin-top:65px;">
     <div class="px-3" style="background-color:white;height:100%;">
       <b-row id="slidder" class="pb-2 mt-4 pt-4 bg-grey-light">
         <b-col class="nopadding">
@@ -14,9 +14,9 @@
             @sliding-start="onSlideStart"
             @sliding-end="onSlideEnd"
           >
-            <b-carousel-slide img-src="https://i2.wp.com/himaforka-uajy.org/wp-content/uploads/2020/06/100667873_10157804408279262_8708869271582670848_o.jpg?fit=1663%2C554&ssl=1" />
-            <b-carousel-slide img-src="https://diskominfo.bogorkab.go.id/wp-content/uploads/2020/03/Banner-Germas-2.png" />
-            <b-carousel-slide img-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScRSJYdxO6S3TVk5esXd1dPXRKyYJifw5GsA&usqp=CAU" />
+            <b-carousel-slide img-src="/1.jpeg" />
+            <b-carousel-slide img-src="/2.jpeg" />
+            <b-carousel-slide img-src="/3.jpeg" />
           </b-carousel>
         </b-col>
       </b-row>
@@ -131,6 +131,7 @@
 <script>
 export default {
   data: () => ({
+    myValue: true,
     active: 'home',
     slide: 0,
     options: [
